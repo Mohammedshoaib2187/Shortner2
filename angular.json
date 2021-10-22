@@ -1,9 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "75c3f073-b0b4-4c1f-8597-958f998465a8"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "shortner2": {
+    "shortner": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/shortner2",
+            "outputPath": "dist/shortner",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -27,7 +30,10 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/font-awesome/css/font-awesome.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
+
             ],
             "scripts": []
           },
@@ -42,7 +48,7 @@
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumError": "7kb"
                 }
               ],
               "fileReplacements": [
@@ -68,10 +74,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "shortner2:build:production"
+              "browserTarget": "shortner:build:production"
             },
             "development": {
-              "browserTarget": "shortner2:build:development"
+              "browserTarget": "shortner:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +85,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "shortner2:build"
+            "browserTarget": "shortner:build"
           }
         },
         "test": {
@@ -102,5 +108,5 @@
       }
     }
   },
-  "defaultProject": "shortner2"
+  "defaultProject": "shortner"
 }

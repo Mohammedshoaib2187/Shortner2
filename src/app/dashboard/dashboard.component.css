@@ -1,0 +1,19 @@
+.orange{
+    background-color: #1483b6;
+}
+.orangeText{
+    color:#ec0a0a;
+}
+.ml{
+    font-weight: 500;
+    color: #FFFFFF;
+}
+.my-input{
+    border:0;
+    background-color: #EEEEEE;
+    padding:1rem;
+}
+.grey{
+    background-color: #48d410 ;
+    color: #FFFFFF;
+}

@@ -1,0 +1,39 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <h2>URL Shortener</h2>
+<form [formGroup]="shortUrl" class="form-inline" (ngSubmit)="submitURL()">
+    <div class="d-flex">
+        <label for="url" class="sr-only">URL</label>
+        <input type="text" placeholder="Paste your URL here" class="w-75 my-input form-control" formControlName="longURL">
+        <input type="submit" class="btn btn-lg orange ml" value="Shorten">
+    </div>
+</form>
+<div *ngIf="successflag==1" class="mt-2">
+    <h3 class="orangeText"> Link Shortened</h3>
+</div>
+<div class="card-body p-0 mt-5">
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead class="grey text-center">
+                <tr>
+                    <th>Long URL</th>
+                    <th>Short URL</th>
+                    <th>Clicks</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let url of UrlData">
+                    <td>{{url.longURL}}</td>
+                    <td class="text-center"><a href={{href}} (click)="changecount(url.short)" target="_blank">http://localhost:4200/p/{{url.short}}</a></td>
+                    <td class="text-center">{{url.count}}</td>
+                    <td class="">
+                    <button class="btn btn-danger btn-sm" (click)="deleteData(url.id)">Delete</button>
+                    </td>
+                </tr>
+                </tbody>
+
+        </table>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="parent clearfix">
+    <div class="bg-illustration">
+      <img src="https://i.ibb.co/Pcg0Pk1/logo.png" alt="logo">
+
+      <div class="burger-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+    </div>
+    
+    <div class="login">
+      <div class="container">
+        <h1>Register to access to<br />your account</h1>
+    
+        <div class="login-form">
+          <form  [formGroup]="registerForm" (ngSubmit)="submitUser()">
+            <input type="text" formControlName="username" placeholder="User name">
+            <input type="email" formControlName="email" placeholder="E-mail Address">
+            <input type="password" formControlName="password" placeholder="Password">
+            <input type="password" placeholder="Re-Enter Password">
+
+            
+
+            <div class="remember-form">
+                <span><a routerLink="">Go to login Page</a></span>
+              </div>
+
+            <button type="submit">Register</button>
+
+          </form>
+        </div>
+    
+      </div>
+      </div>
+  </div>
